@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Response Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>API Response Explorer</h1>
+    <p>Test any public API and inspect JSON, headers, status, and response time.</p>
+  </header>
+
+  <div class="input-section">
+    <input type="text" id="apiUrl" placeholder="Enter API URL (GET only)...">
+    <button id="sendBtn">Test API</button>
+  </div>
+
+  <div id="summary" class="summary hidden">
+    <p><strong>Status:</strong> <span id="statusCode"></span></p>
+    <p><strong>Response Time:</strong> <span id="responseTime"></span> ms</p>
+    <p><strong>Size:</strong> <span id="responseSize"></span> KB</p>
+  </div>
+
+  <div class="container">
+    <div class="panel">
+      <h2>Pretty JSON</h2>
+      <pre id="prettyJson"></pre>
+    </div>
+
+    <div class="panel">
+      <h2>Raw Response</h2>
+      <pre id="rawJson"></pre>
+    </div>
+
+    <div class="panel">
+      <h2>Headers</h2>
+      <pre id="headers"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
