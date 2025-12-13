@@ -1,81 +1,126 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+:root {
+  --bg: #0b0f14;
+  --panel: #121826;
+  --tile: #161c2d;
+  --border: #222a3f;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #6366f1;
 }
 
+/* ---------- Base ---------- */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Header ---------- */
+
 header {
-  background: #222;
-  color: #fff;
-  padding: 20px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1rem;
   text-align: center;
 }
+
+header p {
+  color: var(--muted);
+}
+
+/* ---------- Input ---------- */
 
 .input-section {
   display: flex;
   justify-content: center;
-  padding: 20px;
-  gap: 10px;
+  gap: .75rem;
+  padding: 2rem 1rem;
 }
 
 input {
-  width: 60%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #bbb;
+  width: min(600px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .85rem 1rem;
+  font-size: .95rem;
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 button {
-  padding: 12px 20px;
-  font-size: 16px;
-  background: #0078ff;
+  background: var(--accent);
   border: none;
   color: white;
-  border-radius: 6px;
+  padding: .85rem 1.3rem;
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
 }
 
 button:hover {
-  background: #005fcc;
+  filter: brightness(1.1);
 }
 
+/* ---------- Summary ---------- */
+
+.summary {
+  margin: 0 auto 2rem;
+  max-width: 1000px;
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* ---------- Panels ---------- */
+
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .panel {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  width: 30%;
-  min-width: 300px;
-  max-height: 400px;
+  background: var(--tile);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  max-height: 420px;
   overflow-y: auto;
 }
 
 .panel h2 {
-  margin: 0 0 10px;
+  margin: 0 0 .75rem;
+  font-size: .95rem;
+  color: #c7d2fe;
 }
+
+/* ---------- Code ---------- */
 
 pre {
+  background: #0b1020;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
   white-space: pre-wrap;
-  word-wrap: break-word;
-  font-size: 14px;
+  word-break: break-word;
 }
 
-.summary {
-  background: #fff;
-  padding: 15px;
-  margin: 0 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
-}
+/* ---------- Utilities ---------- */
 
 .hidden {
   display: none;
